@@ -615,6 +615,12 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 }
 @media (max-width:349px){.grp-me .me-id .wm{width:auto;font-size:15.5px}}
 
+.grp-me .grp-in{position:relative}
+.dom{display:block;flex:none;width:56px;height:56px;background:url(img/dom-line.webp) 0 0/1200% 1000% no-repeat;pointer-events:none}
+@media (min-width:1024px){.grp-me .dom{position:absolute;right:12px;bottom:10px}}
+@media (max-width:1023px){.grp-me .dom{width:44px;height:44px;margin:0 -4px 0 -2px}}
+@media (max-width:349px){.grp-me .dom{width:38px;height:38px}}
+
 .hero-in{justify-content:space-between}
 .h-title{display:block}
 .h-title{max-width:7.2em}
@@ -901,7 +907,7 @@ a[href^="#"]{-webkit-touch-callout:none}
 <aside class="side" id="side" aria-label="Навигация">
   <div class="grp grp-me">
     <div class="grp-in me-row">
-      <a class="me" href="#home" aria-label="Владимир Парков, наверх"><span class="me-t"><span class="me-id"><b class="wm"><span>Владимир</span> <span>Парков</span></b><span class="me-sl" aria-hidden="true"></span><small class="role">Тату-мастер<span class="r-city">, Москва</span></small></span><span class="live-m"><span class="lamp" aria-hidden="true"></span><span class="os-t">Запись открыта</span></span></span></a>
+      <a class="me" href="#home" aria-label="Владимир Парков, наверх"><span class="dom" aria-hidden="true"></span><span class="me-t"><span class="me-id"><b class="wm"><span>Владимир</span> <span>Парков</span></b><span class="me-sl" aria-hidden="true"></span><small class="role">Тату-мастер<span class="r-city">, Москва</span></small></span><span class="live-m"><span class="lamp" aria-hidden="true"></span><span class="os-t">Запись открыта</span></span></span></a>
       <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="side-body" aria-label="Меню"></button>
     </div>
   </div>
@@ -1918,5 +1924,27 @@ a[href^="#"]{-webkit-touch-callout:none}
 })();
 </script>
 
+<script>
+/* домик: кадр по прокрутке, с мягким догоном — поворачивается плавно, а не рывками; «меньше движения» — стоит на месте */
+(function(){
+  var d = document.querySelector(".grp-me .dom"); if (!d) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var N = 120, cur = 0, goal = 0, shown = -1, run = false, t0 = 0;
+  function target(){ var max = Math.max(1, document.documentElement.scrollHeight - innerHeight); return Math.min(1, Math.max(0, scrollY / max)) * N; }
+  function show(f){ f = ((f % N) + N) % N; if (f === shown) return; shown = f;
+    d.style.backgroundPosition = (f % 12) * 100 / 11 + "% " + Math.floor(f / 12) * 100 / 9 + "%"; }
+  function step(t){
+    var dt = Math.min(64, t - (t0 || t)); t0 = t;
+    cur += (goal - cur) * (1 - Math.pow(0.86, dt / 16.7));
+    if (Math.abs(goal - cur) < 0.02) cur = goal;
+    show(Math.round(cur));
+    if (cur !== goal) requestAnimationFrame(step); else { run = false; t0 = 0; }
+  }
+  function kick(){ goal = target(); if (!run){ run = true; requestAnimationFrame(step); } }
+  addEventListener("scroll", kick, {passive: true});
+  addEventListener("resize", kick);
+  cur = goal = target(); show(Math.round(cur));
+})();
+</script>
 </body>
 </html>
