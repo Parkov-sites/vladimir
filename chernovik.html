@@ -828,43 +828,6 @@ a[href^="#"]{-webkit-touch-callout:none}
 .pr-free h3 small{color:var(--read)}
 
 
-.rv-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.3fr);align-items:end;gap:clamp(28px,4vw,80px);
-  padding:clamp(26px,3.2vw,52px);border-radius:28px;background:var(--surface);box-shadow:inset 0 1px 0 var(--edge),var(--drop);--rv-y:22px}
-.rv-score-b{display:flex;flex-direction:column;gap:14px}
-.rv-sc-r{display:flex;flex-direction:column;gap:10px}
-.rv-top .rv-score{font-size:clamp(64px,6.4vw,104px)}
-.rv-top .stars{color:var(--ink);font-size:18px;letter-spacing:.16em;line-height:1}
-.rv-top .rv-cnt{font-size:15px;line-height:1.4;color:var(--muted);max-width:14em}
-.rv-lead{margin:0}
-.rv-lead blockquote{margin:0;font-family:var(--serif);font-size:clamp(22px,2.15vw,32px);line-height:1.38;letter-spacing:-.012em;color:var(--ink);text-wrap:pretty}
-.rv-lead blockquote::before,.rv-rest blockquote::before{content:"«"}
-.rv-lead blockquote::after,.rv-rest blockquote::after{content:"»"}
-.rv-lead figcaption{display:flex;align-items:baseline;gap:10px;margin-top:22px;font-size:15px;color:var(--muted)}
-.rv-lead figcaption b{font-weight:600;letter-spacing:-.02em;color:var(--ink)}
-.rv-lead figcaption span::before,.rv-rest figcaption span::before{content:"·";margin-right:10px}
-.rv-grid.rv-rest{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:8px}
-.rv-rest .rv-c{gap:28px;padding:clamp(22px,2.2vw,32px)}
-.rv-rest .rv-c blockquote{font-size:var(--fs-read);line-height:1.6;color:var(--read)}
-.rv-rest .rv-c figcaption{flex-direction:row;align-items:baseline;gap:10px;padding-top:0;border-top:0;color:var(--muted)}
-.rv-rest .rv-c figcaption span{font-size:14px}
-@media (max-width:1199px){.rv-grid.rv-rest{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:900px){
-  .rv-top{grid-template-columns:minmax(0,1fr);align-items:start;gap:26px}
-  .rv-score-b{flex-direction:row;align-items:center;gap:18px}
-}
-@media (max-width:600px){
-  .rv-top{padding:24px 20px 26px;gap:22px}
-  .rv-top .rv-score{font-size:60px}
-  .rv-lead blockquote{font-size:21px;line-height:1.4}
-  .rv-lead figcaption{margin-top:18px}
-  .rv-grid.rv-rest{--pg:max(var(--gut),env(safe-area-inset-left,0px));grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;gap:8px;
-    overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;
-    margin:8px calc(-1 * var(--pg)) -28px;padding:0 var(--pg) 28px;scroll-padding-inline:var(--pg)}
-  .rv-grid.rv-rest::-webkit-scrollbar{display:none}
-  .rv-rest .rv-c{scroll-snap-align:start;padding:22px 20px}
-}
-
-
 .qz-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:inherit;color:var(--ink)}
 .qz-me{display:flex;align-items:center;gap:12px;min-width:0}
 .qz-ava{flex:none;width:44px;height:44px;border-radius:50%;overflow:hidden;background:#14110E}
@@ -1160,17 +1123,16 @@ a[href^="#"]{-webkit-touch-callout:none}
         <h2>Отзывы</h2><span class="sh-sl" aria-hidden="true"></span>
         <p class="sh-lede">Что клиенты пишут обо мне на&nbsp;Яндекс Картах</p>
       </header>
-      <div class="rv-top" data-rv>
-        <div class="rv-score-b"><span class="rv-score">5,0</span><span class="rv-sc-r"><span class="stars" aria-hidden="true">★★★★★</span><span class="rv-cnt">Все отзывы обо мне&nbsp;— на&nbsp;пятёрку</span></span></div>
-        <figure class="rv-lead"><blockquote>Профессионал своего дела: до&nbsp;сеанса ответил на&nbsp;все вопросы, а&nbsp;во&nbsp;время процесса приятно поговорили. Обязательно вернусь ещё раз!</blockquote><figcaption><b>Никита А.</b><span>октябрь 2025</span></figcaption></figure>
-      </div>
-      <div class="rv-grid rv-rest" data-rv-stagger data-rv-row>
-        <figure class="rv-c" data-rv><blockquote>Сделал прям идеально то, что я&nbsp;хотел, за&nbsp;что очень благодарен. Проконсультировал, как ухаживать за&nbsp;тату. К&nbsp;слову, это было первое тату&nbsp;— доволен очень.</blockquote><figcaption><b>Худяков Н.</b><span>октябрь 2023</span></figcaption></figure>
-        <figure class="rv-c" data-rv><blockquote>Владимир&nbsp;— лучший мастер, который у&nbsp;меня когда-либо был. Максимально располагающая атмосфера, приятные диалоги и&nbsp;шутки. Не&nbsp;первый раз обращаюсь к&nbsp;Вове, и&nbsp;как всегда его работы&nbsp;— это что-то с&nbsp;чем-то.</blockquote><figcaption><b>Света К.</b><span>август 2025</span></figcaption></figure>
-        <figure class="rv-c" data-rv><blockquote>Мастер объяснил на&nbsp;пальцах и&nbsp;даже на&nbsp;бумажке, почему моя гениальная идея тату слегка «того, не&nbsp;подходит». И&nbsp;сделал всё максимально тактично. Предложил вариант получше&nbsp;— теперь всем рассказываю, что тату придумано дизайнером!</blockquote><figcaption><b>Галина М.</b><span>август 2025</span></figcaption></figure>
-        <figure class="rv-c" data-rv><blockquote>Наконец-то решилась сделать тату в&nbsp;память об&nbsp;ушедшем питомце&nbsp;— и&nbsp;не&nbsp;прогадала! Мастер Владимир сделал просто потрясающий эскиз. После сеанса рассказал, как будет заживать и&nbsp;как ухаживать. Скоро иду за&nbsp;второй!</blockquote><figcaption><b>Татьяна В.</b><span>апрель 2024</span></figcaption></figure>
-        <figure class="rv-c" data-rv><blockquote>Была на&nbsp;тату у&nbsp;Владимира&nbsp;— офигенный мастер, разрабатывает индивидуальные эскизы, аккуратно и&nbsp;красиво выполняет работу.</blockquote><figcaption><b>marla</b><span>январь 2026</span></figcaption></figure>
-        <figure class="rv-c" data-rv><blockquote>Прекрасная работа мастера Владимира. Музыка на&nbsp;фоне&nbsp;— фантастика, в&nbsp;самое сердце. Владимир ещё и&nbsp;на&nbsp;гитаре поиграл! Всё чётко, по&nbsp;договору.</blockquote><figcaption><b>Мария</b><span>июнь 2025</span></figcaption></figure>
+      <div class="rv-grid" data-rv-stagger>
+        <div class="rv-c rv-sum" data-rv><span class="rv-score">5,0</span><span class="stars" aria-hidden="true">★★★★★</span><span class="rv-cnt">Все отзывы обо мне&nbsp;— на&nbsp;пятёрку</span></div>
+        <figure class="rv-c" data-rv><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>Профессионал своего дела: до&nbsp;сеанса ответил на&nbsp;все вопросы, а&nbsp;во&nbsp;время процесса приятно поговорили. Обязательно вернусь ещё раз!</blockquote><figcaption><b>Никита А.</b><span>октябрь 2025</span></figcaption></figure>
+        <figure class="rv-c" data-rv><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>Сделал прям идеально то, что я&nbsp;хотел, за&nbsp;что очень благодарен. Проконсультировал, как ухаживать за&nbsp;тату. К&nbsp;слову, это было первое тату&nbsp;— доволен очень.</blockquote><figcaption><b>Худяков Н.</b><span>октябрь 2023</span></figcaption></figure>
+        <figure class="rv-c" data-rv><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>Владимир&nbsp;— лучший мастер, который у&nbsp;меня когда-либо был. Максимально располагающая атмосфера, приятные диалоги и&nbsp;шутки. Не&nbsp;первый раз обращаюсь к&nbsp;Вове, и&nbsp;как всегда его работы&nbsp;— это что-то с&nbsp;чем-то.</blockquote><figcaption><b>Света К.</b><span>август 2025</span></figcaption></figure>
+        <figure class="rv-c rv-more" data-rv><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>Мастер объяснил на&nbsp;пальцах и&nbsp;даже на&nbsp;бумажке, почему моя гениальная идея тату слегка «того, не&nbsp;подходит». И&nbsp;сделал всё максимально тактично. Предложил вариант получше&nbsp;— теперь всем рассказываю, что тату придумано дизайнером!</blockquote><figcaption><b>Галина М.</b><span>август 2025</span></figcaption></figure>
+        <figure class="rv-c rv-more" data-rv><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>Наконец-то решилась сделать тату в&nbsp;память об&nbsp;ушедшем питомце&nbsp;— и&nbsp;не&nbsp;прогадала! Мастер Владимир сделал просто потрясающий эскиз. После сеанса рассказал, как будет заживать и&nbsp;как ухаживать. Скоро иду за&nbsp;второй!</blockquote><figcaption><b>Татьяна В.</b><span>апрель 2024</span></figcaption></figure>
+        <figure class="rv-c rv-more" data-rv><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>Была на&nbsp;тату у&nbsp;Владимира&nbsp;— офигенный мастер, разрабатывает индивидуальные эскизы, аккуратно и&nbsp;красиво выполняет работу.</blockquote><figcaption><b>marla</b><span>январь 2026</span></figcaption></figure>
+        <figure class="rv-c rv-more" data-rv><span class="stars" aria-label="5 из 5">★★★★★</span><blockquote>Прекрасная работа мастера Владимира. Музыка на&nbsp;фоне&nbsp;— фантастика, в&nbsp;самое сердце. Владимир ещё и&nbsp;на&nbsp;гитаре поиграл! Всё чётко, по&nbsp;договору.</blockquote><figcaption><b>Мария</b><span>июнь 2025</span></figcaption></figure>
+        <button class="wide-btn rv-all" type="button">Ещё отзывы</button>
       </div>
     </div>
   </section>
@@ -1658,6 +1620,7 @@ a[href^="#"]{-webkit-touch-callout:none}
   /* ——— faq: one answer at a time; answers fold and unfold smoothly while the page glides to the open question ——— */
   var qs = Array.prototype.slice.call(document.querySelectorAll(".qa details")), qBusy = false;
   document.querySelector(".qa-all").addEventListener("click", function(){ this.closest(".qa").classList.add("all"); });
+  document.querySelector(".rv-all").addEventListener("click", function(){ this.closest(".rv-grid").classList.add("all"); });
   function summaryH(d){ return d.querySelector("summary").offsetHeight + (d.offsetHeight - d.clientHeight); }
   qs.forEach(function(d){
     d.querySelector("summary").addEventListener("click", function(e){
