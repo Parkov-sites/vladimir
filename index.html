@@ -815,6 +815,74 @@ a[href^="#"]{-webkit-touch-callout:none}
 .wc-cap{--wc-p:clamp(12px,1.1vw,16px);inset:auto 7.5px 7.5px;padding:var(--wc-p)}
 
 @media (max-width:760px){.ab-stats li{padding:2px}}
+
+
+:root{--read:color-mix(in srgb,var(--ink) 76%,transparent);--fs-read:clamp(17px,1.2vw,18px)}
+.sh-lede{font-size:clamp(18px,1.4vw,21px);line-height:1.45;color:var(--read)}
+@media (min-width:1200px){.sh-row .sh-lede{flex-basis:22em;font-size:clamp(18px,1.3vw,20px);line-height:1.4}}
+.qa details p{font-size:var(--fs-read);line-height:1.6;color:var(--read)}
+.q-main>p{color:var(--read)}
+.pr-c p{font-size:clamp(15px,1.1vw,16.5px)}
+.pr-c h3 .pr small{font-size:max(13px,.42em)}
+.pr-free h3 small{color:var(--read)}
+
+
+.qz-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:inherit;color:var(--ink)}
+.qz-me{display:flex;align-items:center;gap:12px;min-width:0}
+.qz-ava{flex:none;width:44px;height:44px;border-radius:50%;overflow:hidden;background:#14110E}
+
+.qz-ava img{display:block;width:142.86%;max-width:none;height:auto;margin:-21.43% 0 0 -33.33%}
+.qz-me-t{display:flex;flex-direction:column;gap:4px;min-width:0}
+.qz-me-t b{font-size:16px;font-weight:600;letter-spacing:-.02em;line-height:1.1;white-space:nowrap}
+.qz-me-t small{display:flex;align-items:center;gap:7px;font-size:13px;line-height:1.2;color:var(--muted)}
+.qz-dot{flex:none;width:6px;height:6px;border-radius:50%;background:var(--live)}
+.qz-x{width:40px;height:40px;background:color-mix(in srgb,var(--ink) 7%,transparent)}
+.qz-bar{height:3px;margin:18px 0 0;border-radius:0;background:var(--line);
+  -webkit-mask:linear-gradient(90deg,#000 calc(100% - 4px),transparent 0) 0 0/calc((100% + 4px) / 4) 100% repeat-x;
+          mask:linear-gradient(90deg,#000 calc(100% - 4px),transparent 0) 0 0/calc((100% + 4px) / 4) 100% repeat-x}
+.qz-bar i{background:var(--ink);border-radius:0}
+.qz-nav{display:flex;align-items:center;justify-content:space-between;min-height:40px;margin:4px 0 8px;font-size:13px;color:var(--muted)}
+.qz-nav .qz-back{padding:10px 14px 10px 0;font-size:14px;color:var(--ink)}
+.qz-n{font-variant-numeric:tabular-nums}
+
+.qz h2{font-size:clamp(28px,2.4vw,34px);letter-spacing:-.04em;line-height:1.05}
+.qz-sub{margin-top:10px;font-size:16px;line-height:1.5;color:var(--read)}
+.qz-opts{gap:10px;margin-top:24px}
+.qz-o{min-height:60px;font-size:16px}
+.qz-grid{gap:10px}
+.qz-chips{gap:8px}
+.qz-c{height:48px}
+.qz-lab{margin-top:24px;font-size:14px;font-weight:500;color:var(--ink)}
+.qz textarea,.qz input{padding:16px 18px;border-radius:16px;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 10%,transparent)}
+.qz textarea{min-height:136px;margin-top:22px}
+.qz textarea:focus,.qz input:focus{box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--ink) 70%,transparent)}
+
+.qz-f{display:block;margin-top:22px}
+.qz-f+.qz-f{margin-top:16px}
+.qz-f>span{display:block;margin:0 0 8px 2px;font-size:14px;font-weight:500;line-height:1.3;color:var(--ink)}
+.qz-f>span i{font-style:normal;font-weight:400;color:var(--muted)}
+.qz .qz-f input{margin-top:0}
+.qz-att-b{height:56px}
+.qz-act{gap:10px;margin-top:28px}
+.qz-go{height:56px;font-size:16px;font-weight:600}
+.qz-sum{margin-top:22px;padding:6px 18px}
+.qz-sum div{padding:13px 0}
+
+.qz-c.on,.qz-o.on{background:var(--ink);color:var(--bg);box-shadow:none}
+.qz-o.on small{color:color-mix(in srgb,var(--bg) 60%,transparent)}
+
+@media (min-width:601px){
+  .qz{left:auto;right:12px;top:12px;bottom:12px;width:min(480px,calc(100vw - 24px));max-height:none;padding:24px 28px 28px;border-radius:28px;
+    opacity:1;transform:translateX(calc(100% + 24px));transition:transform .55s var(--ease)}
+  .qz.on{transform:none}
+  .qz-body{flex:1;display:flex;flex-direction:column}
+  .qz-step{flex:1 0 auto}
+  .qz-act{margin-top:auto;padding-top:28px}
+}
+@media (max-width:600px){
+  .qz{padding-left:20px;padding-right:20px}
+  .qz h2{font-size:28px}
+}
 </style>
 </head>
 <body>
@@ -1044,7 +1112,7 @@ a[href^="#"]{-webkit-touch-callout:none}
         <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="06 05 07" aria-label="Примеры: средняя татуировка"><img src="img/thumbs/06.webp" srcset="img/thumbs/06.webp 520w, img/06.webp 960w" sizes="(max-width:600px) 78vw, 30vw" alt="" width="520" height="693" loading="lazy" decoding="async"></button><div class="pr-body"><h3>Средняя<span class="pr">15&nbsp;000&nbsp;₽</span></h3><p>Работа побольше и&nbsp;с&nbsp;деталями</p></div></div>
         <div class="why-c pr-c" data-rv><button class="pr-ph" type="button" data-ex="08 19 01" aria-label="Примеры: большая татуировка"><img src="img/thumbs/08.webp" srcset="img/thumbs/08.webp 520w, img/08.webp 960w" sizes="(max-width:600px) 78vw, 30vw" alt="" width="520" height="693" loading="lazy" decoding="async"></button><div class="pr-body"><h3>Большая<span class="pr">30&nbsp;000&nbsp;₽ <small>за&nbsp;сеанс</small></span></h3><p>Целый день над крупной работой</p></div></div>
       </div>
-      <div class="pr-free" data-rv><h3>Бесплатно</h3><ul><li><span>Эскиз</span><span class="pf-dots" aria-hidden="true"></span><b>0 ₽</b></li><li><span>Плёнка для заживления</span><span class="pf-dots" aria-hidden="true"></span><b>0 ₽</b></li><li><span>Коррекция</span><span class="pf-dots" aria-hidden="true"></span><b>0 ₽</b></li></ul></div>
+      <div class="pr-free" data-rv><h3>Бесплатно</h3><ul><li><span>Эскиз</span><span class="pf-dots" aria-hidden="true"></span><b>0&nbsp;₽</b></li><li><span>Плёнка для заживления</span><span class="pf-dots" aria-hidden="true"></span><b>0&nbsp;₽</b></li><li><span>Коррекция</span><span class="pf-dots" aria-hidden="true"></span><b>0&nbsp;₽</b></li></ul></div>
     </div>
   </section>
 
@@ -1077,7 +1145,7 @@ a[href^="#"]{-webkit-touch-callout:none}
       <div class="qa" data-rv>
         <div class="qa-col">
           <details open class="on"><summary>Сколько стоит татуировка?</summary>
-            <p>Маленькая&nbsp;— от 6000 ₽, средняя&nbsp;— 15 000 ₽, большая&nbsp;— 30 000 ₽ за сеанс. Эскиз, плёнка для заживления и коррекция&nbsp;— бесплатно. Точную сумму назову, когда обсудим идею.</p></details>
+            <p>Маленькая&nbsp;— от 6000&nbsp;₽, средняя&nbsp;— 15 000&nbsp;₽, большая&nbsp;— 30 000&nbsp;₽ за сеанс. Эскиз, плёнка для заживления и коррекция&nbsp;— бесплатно. Точную сумму назову, когда обсудим идею.</p></details>
           <details><summary>Больно ли это?</summary>
             <p>Зависит от места и вашей чувствительности. Предплечье и плечо обычно переносятся легче, чем рёбра, ключицы или кисти. Можно делать перерывы.</p></details>
           <details><summary>Как записаться?</summary>
@@ -1145,8 +1213,9 @@ a[href^="#"]{-webkit-touch-callout:none}
 <div class="qz-dim" id="qz-dim" hidden></div>
 <div class="qz" id="qz" hidden role="dialog" aria-modal="true" aria-labelledby="qz-h">
   <div class="qz-grab" aria-hidden="true"></div>
-  <div class="qz-top"><button class="qz-back" type="button" id="qz-back">← Назад</button><span class="qz-n" id="qz-n"></span><button class="qz-x" type="button" id="qz-x" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="qz-top"><span class="qz-me"><span class="qz-ava"><img src="img/portrait.webp" alt="" width="600" height="800" decoding="async"></span><span class="qz-me-t"><b>Владимир Парков</b><small><span class="qz-dot" aria-hidden="true"></span>Запись открыта</small></span></span><button class="qz-x" type="button" id="qz-x" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="qz-bar" aria-hidden="true"><i id="qz-bar"></i></div>
+  <div class="qz-nav"><button class="qz-back" type="button" id="qz-back">← Назад</button><span class="qz-n" id="qz-n"></span></div>
   <div class="qz-body" id="qz-body"></div>
 </div>
 
@@ -1674,7 +1743,7 @@ a[href^="#"]{-webkit-touch-callout:none}
     try { var saved = JSON.parse(sessionStorage.getItem(KEY) || "null"); if (saved){ ans = saved.ans || {}; hist = saved.hist || []; step = saved.step || "idea"; } } catch (e) {}
     var save = function(){ try { sessionStorage.setItem(KEY, JSON.stringify({ ans: ans, hist: hist, step: step })); } catch (e) {} };
     var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
-    var SIZES = [["Маленькая", "от 6000 ₽"], ["Средняя", "15 000 ₽"], ["Большая", "30 000 ₽ за сеанс"], ["Не знаю", "подскажу"]];
+    var SIZES = [["Маленькая", "от 6000\u00a0₽"], ["Средняя", "15 000\u00a0₽"], ["Большая", "30 000\u00a0₽ за сеанс"], ["Не знаю", "подскажу"]];
     var PLACES = ["Предплечье", "Плечо", "Спина", "Грудь", "Бедро", "Другое"];
     var WHEN = ["Как можно скорее", "В ближайшие 2 недели", "Позже, обсудим"];
     function flow(){ return ["idea", "place", "when", "name"]; }
@@ -1698,7 +1767,7 @@ a[href^="#"]{-webkit-touch-callout:none}
       if (s === "place") return '<h2 id="qz-h">Где и\u00a0какого размера?</h2><p class="qz-lab">Место на\u00a0теле</p><div class="qz-chips" style="margin-top:8px">' + PLACES.map(function(p){ return '<button type="button" class="qz-c' + (ans.place === p ? " on" : "") + '" data-k="place" data-v="' + p + '">' + p + "</button>"; }).join("") + "</div>" +
         '<p class="qz-lab">Размер</p><div style="margin-top:8px">' + opts(SIZES.map(function(x){ return [x[0], x[0], x[1]]; }), "size", true) + '</div><div class="qz-act"><button type="button" class="qz-go" data-next>Дальше' + ARROW + "</button></div>";
       if (s === "when") return '<h2 id="qz-h">Когда удобно?</h2><p class="qz-sub">Точную дату подберём вместе</p>' + opts(WHEN.map(function(w){ return [w, w]; }), "when");
-      if (s === "name") return '<h2 id="qz-h">Как к\u00a0вам обращаться?</h2><input id="qz-name" autocomplete="given-name" autocapitalize="words" placeholder="Имя" value="' + esc(ans.name || "") + '" aria-label="Имя"><input id="qz-phone" type="tel" autocomplete="tel" placeholder="Телефон — если удобнее звонок" value="' + esc(ans.phone || "") + '" aria-label="Телефон">' +
+      if (s === "name") return '<h2 id="qz-h">Как к\u00a0вам обращаться?</h2><label class="qz-f"><span>Имя</span><input id="qz-name" autocomplete="given-name" autocapitalize="words" value="' + esc(ans.name || "") + '"></label><label class="qz-f"><span>Телефон <i>— если удобнее звонок</i></span><input id="qz-phone" type="tel" autocomplete="tel" value="' + esc(ans.phone || "") + '"></label>' +
         '<p class="qz-err" id="qz-err" hidden>Напишите имя, чтобы я знал, как к\u00a0вам обращаться.</p><div class="qz-act"><button type="button" class="qz-go" data-next>Проверить заявку' + ARROW + "</button></div>";
       if (s === "review"){
         var rows = [["Идея", ans.idea || "пока без идеи"], ["Место", (ans.place || "—") + (ans.size ? ", " + ans.size.toLowerCase() : "")]];
