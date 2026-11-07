@@ -775,15 +775,17 @@ a[href^="#"]{-webkit-touch-callout:none}
 
 .foot-land{pointer-events:none;overflow:hidden;margin-top:calc(-1 * (clamp(8px,1.5vw,24px) + clamp(30px,3.6vw,52px)))}
 
-.foot-land img{display:block;width:100%;height:auto;transform:translate3d(0,var(--rise,0%),0);will-change:transform;
+.foot-land img,.foot-land canvas{display:block;width:100%;height:auto;
   --fade:linear-gradient(180deg,#000 54%,rgba(0,0,0,.8) 65%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.22) 83%,rgba(0,0,0,.07) 90%,transparent 95%);
   -webkit-mask-image:var(--fade);mask-image:var(--fade)}
 
-@media (max-width:760px){.foot-land img{width:175%;max-width:none;margin-left:-21.5%}}
+@media (max-width:760px){.foot-land img,.foot-land canvas{width:175%;max-width:none;margin-left:-21.5%}}
 
-@media (min-width:1024px){.foot-land img{
+@media (min-width:1024px){.foot-land img,.foot-land canvas{
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%),var(--fade);-webkit-mask-composite:source-in;
   mask-image:linear-gradient(90deg,transparent,#000 8%),var(--fade);mask-composite:intersect}}
+
+.foot-land{position:relative}
 
 .foot .wrap{position:relative;z-index:1;margin-top:calc(-1 * clamp(40px,4.6vw,64px))}
 .foot .foot-bottom{grid-template-columns:minmax(0,1fr) auto;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px));
@@ -1200,7 +1202,7 @@ a[href^="#"]{-webkit-touch-callout:none}
   </section>
 
 <footer class="foot">
-  <div class="foot-land" aria-hidden="true"><img src="img/podval-1200.webp" srcset="img/podval-1200.webp 1200w, img/podval-2400.webp 2400w" sizes="(max-width:760px) 175vw, (min-width:1024px) calc(100vw - 288px), 100vw" alt="" width="2400" height="756" loading="lazy" decoding="async"></div>
+  <div class="foot-land" aria-hidden="true"><img src="img/podval/d/60.webp?v=2" srcset="img/podval/m/30.webp?v=2 1200w, img/podval/d/60.webp?v=2 1800w" sizes="(max-width:760px) 175vw, (min-width:1024px) calc(100vw - 288px), 100vw" alt="" width="1800" height="570" loading="lazy" decoding="async"></div>
   <div class="wrap">
     <div class="foot-bottom">
       <span>© <span data-year>2026</span><span class="fb-name"> Владимир Парков</span></span>
@@ -1419,28 +1421,85 @@ a[href^="#"]{-webkit-touch-callout:none}
     if ("ResizeObserver" in window) new ResizeObserver(pin).observe(sec);
   })();
 
-  /* ——— подвал: пейзаж выезжает снизу, пока страница докручивается до конца; в самом низу стоит на месте.
-     Плавнее (Владимир 28.10.2026): путь растянут от появления пейзажа до самого низа страницы, с мягким разгоном и остановкой,
-     а сам пейзаж догоняет прокрутку с лёгкой инерцией — шаги колеса мыши и рывки пальцем его не дёргают ——— */
+  /* ——— подвал: пролёт камеры по прокрутке (на сайте с 07.11.2026, кадры с реализмом). Блендер снял кадры (3D-модели/Подвал сайта/Пролёт.py):
+     камера опускается сверху в принятый кадр, к концу в домике загорается свет. Верх подвала у нижнего края экрана — первый кадр,
+     низ страницы — последний. Между соседними кадрами — плавный переход; кадр догоняет прокрутку с лёгкой инерцией.
+     Пока кадры грузятся (и при «меньше движения») стоит последний кадр картинкой. Телефон — 30 кадров 1200 px, компьютер — 60 по 1800 px ——— */
   (function(){
-    var land = document.querySelector(".foot-land img"); if (!land || reduce) return;
-    var box = land.parentNode, raf = 0, cur = -1, last = 0;
+    var box = document.querySelector(".foot-land"), still = box && box.querySelector("img");
+    if (!box || reduce) return;
+    var phone = window.matchMedia("(max-width:760px)").matches,
+        N = phone ? 30 : 60, dir = phone ? "img/podval/m/" : "img/podval/d/",
+        frames = [], got = 0, started = false, cv, cx, raf = 0, cur = -1, last = 0, drawn = -1;
+    function name(i){ return dir + (i < 9 ? "0" : "") + (i + 1) + ".webp?v=2"; }
+    function load(){
+      if (started) return; started = true;
+      for (var i = 0; i < N; i++) (function(i){
+        var im = new Image();
+        im.onload = function(){
+          (im.decode ? im.decode() : Promise.resolve()).catch(function(){}).then(function(){ frames[i] = im; if (++got === N) ready(); });
+        };
+        im.src = name(i);
+      })(i);
+    }
+    function ready(){
+      cv = document.createElement("canvas");
+      cv.width = frames[0].naturalWidth; cv.height = frames[0].naturalHeight;
+      cx = cv.getContext("2d");
+      grainInit();
+      box.insertBefore(cv, still);
+      cur = drawn = goal(); draw(cur); still.style.display = "none";
+      window.addEventListener("scroll", req, {passive:true});
+      window.addEventListener("resize", req);
+    }
     function goal(){
       var y = window.scrollY, end = document.documentElement.scrollHeight - window.innerHeight,
           start = Math.min(box.getBoundingClientRect().top + y - window.innerHeight, end - 1),
           q = Math.min(1, Math.max(0, (y - start) / (end - start)));
-      return (1 - q * q * (3 - 2 * q)) * 30;
+      return q * (N - 1);
+    }
+    /* переход между кадрами: a·(1−f) + b·f («lighter» складывает) — прозрачный фон не двоится */
+    function draw(p){
+      var a = Math.floor(p), f = p - a, b = Math.min(N - 1, a + 1);
+      cx.globalCompositeOperation = "source-over"; cx.globalAlpha = 1;
+      cx.clearRect(0, 0, cv.width, cv.height);
+      if (f < .004 || a === b) { cx.drawImage(frames[a], 0, 0); return; }
+      cx.globalAlpha = 1 - f; cx.drawImage(frames[a], 0, 0);
+      cx.globalCompositeOperation = "lighter"; cx.globalAlpha = f; cx.drawImage(frames[b], 0, 0);
+      cx.globalCompositeOperation = "source-over"; cx.globalAlpha = 1;
+      grain();
+    }
+    /* зерно плёнки — только на бетоне, не на фоне страницы (07.11.2026: перекрытие поверх блока высветляло тёмный фон прямоугольником).
+       Копия кадра → «перекрытие» шумом → обрезка по прозрачности кадра → обратно на холст */
+    var gc, gx, gp;
+    function grainInit(){
+      var t = document.createElement("canvas"); t.width = t.height = 160;
+      var tx = t.getContext("2d"), d = tx.createImageData(160, 160);
+      for (var i = 0; i < d.data.length; i += 4) { var v = Math.random() * 255 | 0; d.data[i] = d.data[i+1] = d.data[i+2] = v; d.data[i+3] = 255; }
+      tx.putImageData(d, 0, 0);
+      gc = document.createElement("canvas"); gc.width = cv.width; gc.height = cv.height;
+      gx = gc.getContext("2d"); gp = gx.createPattern(t, "repeat");
+    }
+    function grain(){
+      if (!gx) return;
+      gx.globalCompositeOperation = "copy"; gx.globalAlpha = 1; gx.drawImage(cv, 0, 0);
+      gx.globalCompositeOperation = "overlay"; gx.globalAlpha = .2; gx.fillStyle = gp; gx.fillRect(0, 0, gc.width, gc.height);
+      gx.globalCompositeOperation = "destination-in"; gx.globalAlpha = 1; gx.drawImage(cv, 0, 0);
+      cx.globalCompositeOperation = "copy"; cx.drawImage(gc, 0, 0); cx.globalCompositeOperation = "source-over";
     }
     function tick(t){
       var g = goal(), dt = last ? Math.min(64, t - last) : 16.7;
       cur = cur < 0 ? g : cur + (g - cur) * (1 - Math.pow(.86, dt / 16.7));
-      if (Math.abs(g - cur) < .05) cur = g;
-      land.style.setProperty("--rise", cur.toFixed(2) + "%");
+      if (Math.abs(g - cur) < .01) cur = g;
+      if (Math.abs(cur - drawn) > .001) { draw(cur); drawn = cur; }
       if (cur === g) { raf = 0; last = 0; } else { last = t; raf = requestAnimationFrame(tick); }
     }
     function req(){ if (!raf) raf = requestAnimationFrame(tick); }
-    window.addEventListener("scroll", req, {passive:true});
-    window.addEventListener("resize", req); req();
+    /* кадры грузятся, когда до подвала остаётся пара экранов */
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function(es){ if (es[0].isIntersecting) { io.disconnect(); load(); } }, {rootMargin: "200% 0px"});
+      io.observe(box);
+    } else load();
   })();
 
   /* ——— bottom-edge blur fades out at the very end of the page ——— */
