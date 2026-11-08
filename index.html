@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://theparkov.ru/img/logo/og.jpg">
 <meta property="og:url" content="https://theparkov.ru/">
 <link rel="canonical" href="https://theparkov.ru/">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Владимир Парков", "jobTitle": "Тату-мастер", "description": "Татуировки в чёрно-серой графике и дотворке", "image": "https://theparkov.ru/img/portrait.webp", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}, "sameAs": ["https://vk.com/vladimirparkov", "https://t.me/vladimirparkov", "https://www.pinterest.com/vladimirparkov/"], "url": "https://theparkov.ru/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Владимир Парков", "jobTitle": "Тату-мастер", "description": "Татуировки в чёрно-серой графике и дотворке", "image": "https://theparkov.ru/img/portrait.webp?v=2", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}, "sameAs": ["https://vk.com/vladimirparkov", "https://t.me/vladimirparkov", "https://www.pinterest.com/vladimirparkov/"], "url": "https://theparkov.ru/"}</script>
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/InterTight-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/InterTight-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -648,7 +648,7 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 .ab-card{--c-ink:#F3EFE8;--c-mut:rgba(243,239,232,.66);--c-line:rgba(243,239,232,.16);
   position:relative;overflow:hidden;display:flex;align-items:center;min-height:clamp(460px,36vw,540px);border-radius:28px;
   background:#14110E;color:var(--c-ink);box-shadow:inset 0 1px 0 var(--edge),var(--drop);--rv-y:22px}
-.ab-ph{position:absolute;top:0;right:0;width:min(56%,600px);height:100%;object-fit:cover;object-position:50% 4%;
+.ab-ph{position:absolute;top:0;right:0;width:auto;max-width:56%;height:100%;aspect-ratio:5/6;object-fit:cover;object-position:50% 8%;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 45%);mask-image:linear-gradient(90deg,transparent,#000 45%)}
 .ab-blur{display:none}
 .ab-body{position:relative;z-index:1;width:min(30em,54%);padding:clamp(28px,3.6vw,56px)}
@@ -677,14 +677,14 @@ body{background:radial-gradient(1200px 760px at 88% -8%,color-mix(in srgb,var(--
 }
 @media (max-width:760px){
   .ab-card{display:grid;align-items:start;min-height:0}
-  .ab-ph{position:relative;grid-area:1/1;width:100%;height:auto;aspect-ratio:3/4;object-position:50% 0;
-    -webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}
+  .ab-ph{position:relative;grid-area:1/1;width:100%;max-width:none;height:auto;aspect-ratio:2/3;object-position:50% 0;
+    -webkit-mask-image:linear-gradient(180deg,#000 80%,transparent);mask-image:linear-gradient(180deg,#000 80%,transparent)}
   
-  .ab-blur{display:block;grid-area:1/1;align-self:end;height:36%;pointer-events:none;
+  .ab-blur{display:block;grid-area:1/1;align-self:end;height:24%;pointer-events:none;
     background:linear-gradient(180deg,rgba(20,17,14,0),rgba(20,17,14,.55) 45%,#14110E);
     -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
     -webkit-mask-image:linear-gradient(180deg,transparent,#000 50%);mask-image:linear-gradient(180deg,transparent,#000 50%)}
-  .ab-body{grid-area:2/1;width:auto;margin-top:-34%;padding:0 20px 20px}
+  .ab-body{grid-area:2/1;width:auto;margin-top:-22%;padding:0 20px 20px}
   .ab-name{font-size:24px;margin-bottom:8px}
   .ab-text{font-size:15.5px;line-height:1.55}
   .ab-text+.ab-text{margin-top:2px}
@@ -839,7 +839,7 @@ a[href^="#"]{-webkit-touch-callout:none}
 .qz-me{display:flex;align-items:center;gap:12px;min-width:0}
 .qz-ava{flex:none;width:44px;height:44px;border-radius:50%;overflow:hidden;background:#14110E}
 
-.qz-ava img{display:block;width:142.86%;max-width:none;height:auto;margin:-21.43% 0 0 -33.33%}
+.qz-ava img{display:block;width:140.5%;max-width:none;height:auto;margin:-20% 0 0 -22.5%}
 .qz-me-t{display:flex;flex-direction:column;gap:4px;min-width:0}
 .qz-me-t b{font-size:16px;font-weight:600;letter-spacing:-.02em;line-height:1.1;white-space:nowrap}
 .qz-me-t small{display:flex;align-items:center;gap:7px;font-size:13px;line-height:1.2;color:var(--muted)}
@@ -1089,7 +1089,7 @@ a[href^="#"]{-webkit-touch-callout:none}
         <p class="sh-lede">Кто я и&nbsp;как работаю</p>
       </header>
       <article class="ab-card" data-rv>
-        <img class="ab-ph" src="img/portrait.webp" alt="Владимир Парков, тату-мастер" width="600" height="800" loading="lazy" decoding="async">
+        <img class="ab-ph" src="img/portrait.webp?v=2" alt="Владимир Парков, тату-мастер" width="843" height="1264" loading="lazy" decoding="async">
         <span class="ab-blur" aria-hidden="true"></span>
         <div class="ab-body">
           <h3 class="ab-name">Владимир Парков</h3>
@@ -1221,7 +1221,7 @@ a[href^="#"]{-webkit-touch-callout:none}
 <div class="qz-dim" id="qz-dim" hidden></div>
 <div class="qz ym-hide-content" id="qz" hidden role="dialog" aria-modal="true" aria-labelledby="qz-h">
   <div class="qz-grab" aria-hidden="true"></div>
-  <div class="qz-top"><span class="qz-me"><span class="qz-ava"><img src="img/portrait.webp" alt="" width="600" height="800" decoding="async"></span><span class="qz-me-t"><b>Владимир Парков</b><small><span class="qz-dot" aria-hidden="true"></span>Запись открыта</small></span></span><button class="qz-x" type="button" id="qz-x" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="qz-top"><span class="qz-me"><span class="qz-ava"><img src="img/portrait.webp?v=2" alt="" width="843" height="1264" decoding="async"></span><span class="qz-me-t"><b>Владимир Парков</b><small><span class="qz-dot" aria-hidden="true"></span>Запись открыта</small></span></span><button class="qz-x" type="button" id="qz-x" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="qz-bar" aria-hidden="true"><i id="qz-bar"></i></div>
   <div class="qz-nav"><button class="qz-back" type="button" id="qz-back">← Назад</button><span class="qz-n" id="qz-n"></span></div>
   <div class="qz-body" id="qz-body"></div>
