@@ -2060,8 +2060,8 @@ a[href^="#"]{-webkit-touch-callout:none}
 
 <script>
 (function(){
-  var YM = 0;
-  if (!YM || location.protocol.indexOf("http") !== 0) return;
+  var YM = 114131817; /* счётчик «Персональный сайт», theparkov.ru, 08.11.2026 */
+  if (!YM || location.protocol.indexOf("http") !== 0 || /chernovik/.test(location.pathname)) return; /* черновик не считаем */
   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
   ym(YM, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
