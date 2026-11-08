@@ -12,10 +12,10 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Владимир Парков — тату-мастер в Москве">
 <meta property="og:description" content="Татуировки в чёрно-серой графике и дотворке. Работы, цены, отзывы, запись.">
-<meta property="og:image" content="https://parkov-sites.github.io/vladimir/img/logo/og.jpg">
-<meta property="og:url" content="https://parkov-sites.github.io/vladimir/">
-<link rel="canonical" href="https://parkov-sites.github.io/vladimir/">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Владимир Парков", "jobTitle": "Тату-мастер", "description": "Татуировки в чёрно-серой графике и дотворке", "image": "https://parkov-sites.github.io/vladimir/img/portrait.webp", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}, "sameAs": ["https://vk.com/vladimirparkov", "https://t.me/vladimirparkov", "https://www.pinterest.com/vladimirparkov/"], "url": "https://parkov-sites.github.io/vladimir/"}</script>
+<meta property="og:image" content="https://theparkov.ru/img/logo/og.jpg">
+<meta property="og:url" content="https://theparkov.ru/">
+<link rel="canonical" href="https://theparkov.ru/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Владимир Парков", "jobTitle": "Тату-мастер", "description": "Татуировки в чёрно-серой графике и дотворке", "image": "https://theparkov.ru/img/portrait.webp", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}, "sameAs": ["https://vk.com/vladimirparkov", "https://t.me/vladimirparkov", "https://www.pinterest.com/vladimirparkov/"], "url": "https://theparkov.ru/"}</script>
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/InterTight-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/InterTight-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -1219,7 +1219,7 @@ a[href^="#"]{-webkit-touch-callout:none}
 </div>
 
 <div class="qz-dim" id="qz-dim" hidden></div>
-<div class="qz" id="qz" hidden role="dialog" aria-modal="true" aria-labelledby="qz-h">
+<div class="qz ym-hide-content" id="qz" hidden role="dialog" aria-modal="true" aria-labelledby="qz-h">
   <div class="qz-grab" aria-hidden="true"></div>
   <div class="qz-top"><span class="qz-me"><span class="qz-ava"><img src="img/portrait.webp" alt="" width="600" height="800" decoding="async"></span><span class="qz-me-t"><b>Владимир Парков</b><small><span class="qz-dot" aria-hidden="true"></span>Запись открыта</small></span></span><button class="qz-x" type="button" id="qz-x" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="qz-bar" aria-hidden="true"><i id="qz-bar"></i></div>
@@ -1919,21 +1919,21 @@ a[href^="#"]{-webkit-touch-callout:none}
     var SEND_IC = '<svg viewBox="3.97 4.5 16 16" aria-hidden="true"><path fill="currentColor" d="M16.906 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>';
     var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
     function html(s){
-      if (s === "idea") return '<h2 id="qz-h">Что хотите набить?</h2><p class="qz-sub">Пару слов и, если есть, фото или референсы. В\u00a0конце заявка уйдёт мне в\u00a0Телеграм</p><textarea id="qz-idea" placeholder="Ваша идея" aria-label="Идея">' + esc(ans.idea || "") + '</textarea>' +
+      if (s === "idea") return '<h2 id="qz-h">Что хотите набить?</h2><p class="qz-sub">Пару слов и, если есть, фото или референсы. В\u00a0конце заявка уйдёт мне в\u00a0Телеграм</p><textarea id="qz-idea" class="ym-disable-keys" placeholder="Ваша идея" aria-label="Идея">' + esc(ans.idea || "") + '</textarea>' +
         '<label class="qz-att"><input type="file" id="qz-files" accept="image/*" multiple><span class="qz-att-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="m20.5 16-4.5-4.5L7 19"/></svg>Прикрепить фото или референсы</span></label>' +
         '<div class="qz-thumbs" id="qz-thumbs">' + thumbs() + "</div>" +
         '<div class="qz-act"><button type="button" class="qz-go" data-next>Дальше' + ARROW + '</button><button type="button" class="qz-alt" data-noidea>Пока без идеи</button></div>';
       if (s === "place") return '<h2 id="qz-h">Где и\u00a0какого размера?</h2><p class="qz-lab">Место на\u00a0теле</p><div class="qz-chips" style="margin-top:8px">' + PLACES.map(function(p){ return '<button type="button" class="qz-c' + (ans.place === p ? " on" : "") + '" data-k="place" data-v="' + p + '">' + p + "</button>"; }).join("") + "</div>" +
         '<p class="qz-lab">Размер</p><div style="margin-top:8px">' + opts(SIZES.map(function(x){ return [x[0], x[0], x[1]]; }), "size", true) + '</div><div class="qz-act"><button type="button" class="qz-go" data-next>Дальше' + ARROW + "</button></div>";
       if (s === "when") return '<h2 id="qz-h">Когда удобно?</h2><p class="qz-sub">Точную дату подберём вместе</p>' + opts(WHEN.map(function(w){ return [w, w]; }), "when");
-      if (s === "name") return '<h2 id="qz-h">Как к\u00a0вам обращаться?</h2><label class="qz-f"><span>Имя</span><input id="qz-name" autocomplete="given-name" autocapitalize="words" value="' + esc(ans.name || "") + '"></label><label class="qz-f"><span>Телефон <i>— если удобнее звонок</i></span><input id="qz-phone" type="tel" autocomplete="tel" value="' + esc(ans.phone || "") + '"></label>' +
+      if (s === "name") return '<h2 id="qz-h">Как к\u00a0вам обращаться?</h2><label class="qz-f"><span>Имя</span><input id="qz-name" class="ym-disable-keys" autocomplete="given-name" autocapitalize="words" value="' + esc(ans.name || "") + '"></label><label class="qz-f"><span>Телефон <i>— если удобнее звонок</i></span><input id="qz-phone" class="ym-disable-keys" type="tel" autocomplete="tel" value="' + esc(ans.phone || "") + '"></label>' +
         '<p class="qz-err" id="qz-err" hidden>Напишите имя, чтобы я знал, как к\u00a0вам обращаться.</p><div class="qz-act"><button type="button" class="qz-go" data-next>Проверить заявку' + ARROW + "</button></div>";
       if (s === "review"){
         var rows = [["Идея", ans.idea || "пока без идеи"], ["Место", (ans.place || "—") + (ans.size ? ", " + ans.size.toLowerCase() : "")]];
         if (files.length) rows.push(["Фото", files.length + " шт."]);
         if (ans.when) rows.push(["Когда", ans.when]); rows.push(["Имя", ans.name]); if (ans.phone) rows.push(["Телефон", ans.phone]);
         return '<h2 id="qz-h">Всё верно?</h2><dl class="qz-sum">' + rows.map(function(r){ return "<div><dt>" + r[0] + "</dt><dd>" + esc(r[1]) + "</dd></div>"; }).join("") + "</dl>" +
-          '<div class="qz-act"><a class="qz-go" id="qz-send" href="' + TG + '" target="_blank" rel="noopener">' + SEND_IC + 'Отправить в\u00a0Телеграм</a></div>' +
+          '<div class="qz-act"><a class="qz-go ym-disable-tracklink" id="qz-send" href="' + TG + '" target="_blank" rel="noopener">' + SEND_IC + 'Отправить в\u00a0Телеграм</a></div>' +
           '<p class="qz-note"><span class="lamp" aria-hidden="true"></span>заявку читаю сам</p>';
       }
       if (s === "done" && files.length){
@@ -1941,11 +1941,11 @@ a[href^="#"]{-webkit-touch-callout:none}
         return '<span class="qz-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><h2 id="qz-h">Заявка в\u00a0чате, осталось фото</h2>' +
           (canShare ? '<p class="qz-sub">Нажмите кнопку ниже, выберите Телеграм и\u00a0чат ' + NICK + '\u00a0— он будет первым в\u00a0списке</p><div class="qz-act"><button type="button" class="qz-go" id="qz-share">Отправить мне фото (' + files.length + ')</button>'
                     : '<p class="qz-sub">Перетащите фото в\u00a0открытый чат со\u00a0мной или прикрепите их скрепкой</p><div class="qz-act">') +
-          '<a class="qz-alt" id="qz-again" href="' + TG + '" target="_blank" rel="noopener">Открыть чат ещё раз</a><button type="button" class="qz-alt" data-close>Готово</button></div>';
+          '<a class="qz-alt ym-disable-tracklink" id="qz-again" href="' + TG + '" target="_blank" rel="noopener">Открыть чат ещё раз</a><button type="button" class="qz-alt" data-close>Готово</button></div>';
       }
       if (s === "done") return '<span class="qz-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><h2 id="qz-h">Чат со\u00a0мной открыт</h2>' +
         '<p class="qz-sub">Нажмите там «Отправить». Если чат не\u00a0открылся или поле пустое, текст заявки уже скопирован: откройте ' + NICK + ' и\u00a0вставьте.</p>' +
-        '<div class="qz-act"><a class="qz-go" id="qz-again" href="' + TG + '" target="_blank" rel="noopener">Открыть чат ещё раз</a><button type="button" class="qz-alt" id="qz-copy">Скопировать текст</button><button type="button" class="qz-alt" data-close>Готово</button></div>';
+        '<div class="qz-act"><a class="qz-go ym-disable-tracklink" id="qz-again" href="' + TG + '" target="_blank" rel="noopener">Открыть чат ещё раз</a><button type="button" class="qz-alt" id="qz-copy">Скопировать текст</button><button type="button" class="qz-alt" data-close>Готово</button></div>';
       return "";
     }
     function thumbs(){ return files.map(function(f, i){ return '<span class="qz-th"><img src="' + f.url + '" alt=""><button type="button" data-rm="' + i + '" aria-label="Убрать фото">×</button></span>'; }).join(""); }
