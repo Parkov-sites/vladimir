@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Владимир Парков — тату-мастер в Москве</title>
 <meta name="description" content="Тату-мастер в Москве: татуировки в чёрно-серой графике и дотворке. Бью с 2015 года, эскиз рисую сам. Работы, цены, отзывы и запись.">
-<script>(function(){document.documentElement.setAttribute("data-theme","dark");try{if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("parkov-intro")){document.documentElement.classList.add("intro");sessionStorage.setItem("parkov-intro","1");}}catch(e){}})();</script>
+<script>(function(){var r=document.documentElement,on=false,go=0,q=[];r.setAttribute("data-theme","dark");try{if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("parkov-intro")){r.classList.add("intro");on=true;sessionStorage.setItem("parkov-intro","1");}}catch(e){}
+window.afterIntro=function(f,ms){if(!on)setTimeout(f,0);else if(go)setTimeout(f,Math.max(0,go+(ms||0)-performance.now()));else q.push([f,ms||0]);};
+window.introGo=function(){if(go||!on)return;go=performance.now();r.classList.add("go");q.forEach(function(x){setTimeout(x[0],x[1]);});q=[];};
+if(on){setTimeout(function(){if(!document.hidden)window.introGo();},5000);window.afterIntro(function(){r.classList.add("late");},1300);}})();</script>
 <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32.png">
 <link rel="apple-touch-icon" href="img/logo/apple-touch-icon.png">
 <meta name="theme-color" content="#121211">
@@ -766,6 +769,8 @@ a[href^="#"]{-webkit-touch-callout:none}
 .intro .hero-card{animation:heroIn 1.25s var(--ease) 1.95s both}
 @keyframes heroIn{from{opacity:0;transform:translateY(90px)}}
 .intro .side{animation-delay:2s}
+html.intro:not(.go) *,html.intro:not(.go) *::before,html.intro:not(.go) *::after{animation-play-state:paused!important}
+html.intro:not(.late) .dom{background-image:none}
 
 
 #contact{position:static}
@@ -1018,7 +1023,7 @@ a[href^="#"]{-webkit-touch-callout:none}
           <figcaption><span class="t">Дома на ветвях</span></figcaption>
         </figure>
         <figure class="work vid" data-rv data-m="vladimir" data-n="v-nozhnicy" data-s="Одного кольца нет. Я зову их «ножниц», без «ы»." data-v data-t="Ножницы" data-alt="Видео: от эскиза до татуировки — портновские ножницы">
-          <button type="button" data-open="v-nozhnicy" aria-label="Смотреть видео: Ножницы"><video muted loop playsinline preload="none" data-poster="video/v-nozhnicy.webp" data-src="video/v-nozhnicy.mp4" aria-hidden="true"></video><span class="v-badge">видео</span></button>
+          <button type="button" data-open="v-nozhnicy" aria-label="Смотреть видео: Ножницы"><video muted loop playsinline preload="none" data-poster="video/v-nozhnicy.webp" data-src="video/v-nozhnicy-card.mp4" aria-hidden="true"></video><span class="v-badge">видео</span></button>
           <figcaption><span class="t">Ножницы</span></figcaption>
         </figure>
         <figure class="work vid" data-rv data-m="vladimir" data-n="v-vladimir-10" data-s="Вечный спор: голова против сердца." data-v data-t="Фехтовальщики" data-alt="Видео: от эскиза до татуировки — фехтовальщики на плече">
@@ -1026,11 +1031,11 @@ a[href^="#"]{-webkit-touch-callout:none}
           <figcaption><span class="t">Фехтовальщики</span></figcaption>
         </figure>
         <figure class="work vid" data-rv data-m="vladimir" data-n="v-pobeg" data-s="Домик сбежал. Иногда хочется так же." data-v data-t="Побег" data-alt="Видео: от эскиза до татуировки — домик на ногах">
-          <button type="button" data-open="v-pobeg" aria-label="Смотреть видео: Побег"><video muted loop playsinline preload="none" data-poster="video/v-pobeg.webp" data-src="video/v-pobeg.mp4" aria-hidden="true"></video><span class="v-badge">видео</span></button>
+          <button type="button" data-open="v-pobeg" aria-label="Смотреть видео: Побег"><video muted loop playsinline preload="none" data-poster="video/v-pobeg.webp" data-src="video/v-pobeg-card.mp4" aria-hidden="true"></video><span class="v-badge">видео</span></button>
           <figcaption><span class="t">Побег</span></figcaption>
         </figure>
         <figure class="work vid" data-rv data-m="vladimir" data-n="v-pristroiki" data-s="Три дома срослись в один." data-v data-t="Пристройки" data-alt="Видео: от эскиза до татуировки — три сросшихся домика">
-          <button type="button" data-open="v-pristroiki" aria-label="Смотреть видео: Пристройки"><video muted loop playsinline preload="none" data-poster="video/v-pristroiki.webp" data-src="video/v-pristroiki.mp4" aria-hidden="true"></video><span class="v-badge">видео</span></button>
+          <button type="button" data-open="v-pristroiki" aria-label="Смотреть видео: Пристройки"><video muted loop playsinline preload="none" data-poster="video/v-pristroiki.webp" data-src="video/v-pristroiki-card.mp4" aria-hidden="true"></video><span class="v-badge">видео</span></button>
           <figcaption><span class="t">Пристройки</span></figcaption>
         </figure>
         <figure class="work vid" data-rv data-m="vladimir" data-n="v-ulybka" data-s="Сердце, которое улыбается во весь рот." data-v data-t="Улыбка" data-alt="Видео: процесс — лицо в форме сердца, дотворк">
@@ -1221,7 +1226,7 @@ a[href^="#"]{-webkit-touch-callout:none}
 <div class="qz-dim" id="qz-dim" hidden></div>
 <div class="qz ym-hide-content" id="qz" hidden role="dialog" aria-modal="true" aria-labelledby="qz-h">
   <div class="qz-grab" aria-hidden="true"></div>
-  <div class="qz-top"><span class="qz-me"><span class="qz-ava"><img src="img/portrait.webp?v=2" alt="" width="843" height="1264" decoding="async"></span><span class="qz-me-t"><b>Владимир Парков</b><small><span class="qz-dot" aria-hidden="true"></span>Запись открыта</small></span></span><button class="qz-x" type="button" id="qz-x" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="qz-top"><span class="qz-me"><span class="qz-ava"><img src="img/portrait-ava.webp" alt="" width="192" height="288" decoding="async"></span><span class="qz-me-t"><b>Владимир Парков</b><small><span class="qz-dot" aria-hidden="true"></span>Запись открыта</small></span></span><button class="qz-x" type="button" id="qz-x" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="qz-bar" aria-hidden="true"><i id="qz-bar"></i></div>
   <div class="qz-nav"><button class="qz-back" type="button" id="qz-back">← Назад</button><span class="qz-n" id="qz-n"></span></div>
   <div class="qz-body" id="qz-body"></div>
@@ -1255,7 +1260,7 @@ a[href^="#"]{-webkit-touch-callout:none}
     var m = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
     window.scrollTo({top: ref.getBoundingClientRect().top + window.scrollY - m, behavior: reduce ? "auto" : "smooth"});
   };
-  setTimeout(function(){ var p = document.querySelector(".pre"); if (p) p.remove(); }, 3000);
+  afterIntro(function(){ var p = document.querySelector(".pre"); if (p) p.remove(); }, 2700);
   /* the hero reel stays a still picture for those who asked for less motion */
   /* the reel: wide for computer screens, tall for phones; a still frame for those who asked for less motion */
   var heroVid = document.querySelector(".hero-vid");
@@ -1271,8 +1276,8 @@ a[href^="#"]{-webkit-touch-callout:none}
     }
   }
 
-  /* ——— film grain: every frame is a new noise pattern, nothing slides ——— */
-  (function(){
+  /* ——— film grain: every frame is a new noise pattern, nothing slides; starts once the intro has drawn (it is hidden under it anyway) ——— */
+  afterIntro(function(){
     var hosts = Array.prototype.slice.call(document.querySelectorAll(".grain")); if (!hosts.length) return;
     var T = 256, N = 12, tiles = [];
     try {
@@ -1318,7 +1323,7 @@ a[href^="#"]{-webkit-touch-callout:none}
       last = now;
       for (var k = 0; k < layers.length; k++) if (layers[k].on) draw(layers[k]);
     })(0);
-  })();
+  }, 1300);
 
   /* ——— header, menu, anchors ——— */
   var mb = document.getElementById("menu-btn"), side = document.getElementById("side"), scrim = document.getElementById("scrim");
@@ -1725,12 +1730,12 @@ a[href^="#"]{-webkit-touch-callout:none}
         else v.pause();
       });
     }, {rootMargin:"150px 0px"});
-    document.querySelectorAll(".work.vid video").forEach(function(v){ vio.observe(v); });
+    afterIntro(function(){ document.querySelectorAll(".work.vid video").forEach(function(v){ vio.observe(v); }); }, 2600);
     /* covers come in a screen or two ahead, so the first load carries only what is in view */
     var pio = new IntersectionObserver(function(entries){
       entries.forEach(function(en){ if (en.isIntersecting){ en.target.poster = en.target.dataset.poster; pio.unobserve(en.target); } });
     }, {rootMargin:"1200px 0px"});
-    document.querySelectorAll("video[data-poster]").forEach(function(v){ pio.observe(v); });
+    afterIntro(function(){ document.querySelectorAll("video[data-poster]").forEach(function(v){ pio.observe(v); }); }, 1300);
   } else document.querySelectorAll("video[data-poster]").forEach(function(v){ v.poster = v.dataset.poster; });
   document.getElementById("lb-close").addEventListener("click", close);
   document.getElementById("lb-prev").addEventListener("click", function(){ if (!swiped) show(idx - 1); });
@@ -2062,9 +2067,11 @@ a[href^="#"]{-webkit-touch-callout:none}
 (function(){
   var YM = 114131817; /* счётчик «Персональный сайт», theparkov.ru, 08.11.2026 */
   if (!YM || location.protocol.indexOf("http") !== 0 || /chernovik/.test(location.pathname)) return; /* черновик не считаем */
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+  /* очередь ym создаётся сразу (цели не теряются), сам счётчик грузится после заставки — не тормозит её */
+  window.ym = window.ym || function(){ (ym.a = ym.a || []).push(arguments); }; ym.l = 1 * new Date();
   ym(YM, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+  afterIntro(function(){ var k = document.createElement("script"), a = document.getElementsByTagName("script")[0];
+    k.async = 1; k.src = "https://mc.yandex.ru/metrika/tag.js"; a.parentNode.insertBefore(k, a); }, 2600);
   var goal = function(n){ try { ym(YM, "reachGoal", n); } catch (e) {} };
   var openQuiz = window.openQuiz;
   if (openQuiz) window.openQuiz = function(){ goal("anketa"); return openQuiz.apply(this, arguments); };
@@ -2099,5 +2106,7 @@ a[href^="#"]{-webkit-touch-callout:none}
   cur = goal = target(); show(Math.round(cur));
 })();
 </script>
+
+<script>requestAnimationFrame(function(){ requestAnimationFrame(function(){ if (window.introGo) introGo(); }); });</script>
 </body>
 </html>
