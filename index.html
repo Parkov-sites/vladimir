@@ -957,6 +957,7 @@ html.intro:not(.late) .dom{background-image:none}
         <span class="h-title">Тату-мастер из&nbsp;Москвы</span>
       </h1>
       <div class="h-foot">
+        <p class="h-sub">Татуировки с&nbsp;историей — рисую под&nbsp;вас</p>
         <div class="h-cta">
           <a class="h-btn h-go" href="#contact"><span class="h-bl"><b>Оставить заявку</b></span><span class="b-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
           <a class="h-btn h-ask" href="https://t.me/vladimirparkoff" target="_blank" rel="noopener"><span class="h-bl"><b>Задать вопрос</b><small><span class="lamp" aria-hidden="true"></span><span>отвечаю лично</span></small></span><span class="b-ic" aria-hidden="true"><svg viewBox="3.97 4.5 16 16"><path fill="currentColor" d="M16.906 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span></a>
@@ -1164,7 +1165,7 @@ html.intro:not(.late) .dom{background-image:none}
           <details><summary>Как записаться?</summary>
             <p>Напишите мне в Телеграм <a href="https://t.me/vladimirparkoff" target="_blank" rel="noopener">@vladimirparkoff</a> или соберите заявку внизу страницы. Обсудим идею и выберем дату.</p></details>
           <details><summary>Где проходит сеанс?</summary>
-            <p>В Москве, в тату-студии. Точный адрес пришлю, когда договоримся о дате.</p></details>
+            <p>В тату-студии у&nbsp;м.&nbsp;Серпуховская. Точный адрес пришлю, когда договоримся о&nbsp;дате.</p></details>
           <details><summary>Сколько длится сеанс?</summary>
             <p>Маленькая татуировка&nbsp;— обычно около часа. Средняя&nbsp;— несколько часов, большая&nbsp;— целый день или несколько сеансов. Точнее скажу, когда нарисую эскиз.</p></details>
         </div>
@@ -1172,7 +1173,7 @@ html.intro:not(.late) .dom{background-image:none}
           <details><summary>Что, если идеи пока нет?</summary>
             <p>Пришлите пару работ отсюда, которые зацепили, и расскажите, что для вас важно. Нарисую в том же духе, но вашу&nbsp;— придумаем маленькую историю вместе.</p></details>
           <details class="qa-more"><summary>Можно принести свой эскиз или референс?</summary>
-            <p>Да, референсы помогают понять настроение и детали. Но копировать чужую татуировку я не буду: по вашей идее нарисую свой эскиз.</p></details>
+            <p>Да, приносите: так проще понять, что вам нравится. По&nbsp;референсу нарисую свой вариант, чтобы татуировка была только вашей.</p></details>
           <details class="qa-more"><summary>Как подготовиться к сеансу?</summary>
             <p>Выспитесь, поешьте заранее и не пейте алкоголь накануне. Наденьте удобную одежду, которая открывает место татуировки. Возьмите паспорт: работаю только с совершеннолетними. Если болеете или принимаете лекарства, предупредите заранее.</p></details>
           <details class="qa-more"><summary>Сколько заживает и как ухаживать?</summary>
@@ -1902,7 +1903,7 @@ html.intro:not(.late) .dom{background-image:none}
   (function(){
     var qz = document.getElementById("qz"), dim = document.getElementById("qz-dim"), body = document.getElementById("qz-body"),
         nEl = document.getElementById("qz-n"), bar = document.getElementById("qz-bar"), back = document.getElementById("qz-back"), opener = null;
-    var TG = "https://t.me/vladimirparkoff", NICK = "@vladimirparkoff";
+    var TG = "https://t.me/vladimirparkoff", NICK = "@vladimirparkoff", VK = "https://vk.me/vladimirparkov", via = "tg";  /* via — куда ушла заявка: tg или vk (13.11.2026) */
     var KEY = "parkov-quiz", ans = {}, hist = [], step = "idea", files = [];
     try { var saved = JSON.parse(sessionStorage.getItem(KEY) || "null"); if (saved){ ans = saved.ans || {}; hist = saved.hist || []; step = saved.step || "idea"; } } catch (e) {}
     var save = function(){ try { sessionStorage.setItem(KEY, JSON.stringify({ ans: ans, hist: hist, step: step })); } catch (e) {} };
@@ -1938,9 +1939,12 @@ html.intro:not(.late) .dom{background-image:none}
         if (files.length) rows.push(["Фото", files.length + " шт."]);
         if (ans.when) rows.push(["Когда", ans.when]); rows.push(["Имя", ans.name]); if (ans.phone) rows.push(["Телефон", ans.phone]);
         return '<h2 id="qz-h">Всё верно?</h2><dl class="qz-sum">' + rows.map(function(r){ return "<div><dt>" + r[0] + "</dt><dd>" + esc(r[1]) + "</dd></div>"; }).join("") + "</dl>" +
-          '<div class="qz-act"><a class="qz-go ym-disable-tracklink" id="qz-send" href="' + TG + '" target="_blank" rel="noopener">' + SEND_IC + 'Отправить в\u00a0Телеграм</a></div>' +
+          '<div class="qz-act"><a class="qz-go ym-disable-tracklink" id="qz-send" href="' + TG + '" target="_blank" rel="noopener">' + SEND_IC + 'Отправить в\u00a0Телеграм</a><a class="qz-alt ym-disable-tracklink" id="qz-vk" href="' + VK + '" target="_blank" rel="noopener">Или во\u00a0ВКонтакте</a></div>' +
           '<p class="qz-note"><span class="lamp" aria-hidden="true"></span>заявку читаю сам</p>';
       }
+      if (s === "done" && via === "vk") return '<span class="qz-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><h2 id="qz-h">Чат во\u00a0ВКонтакте открыт</h2>' +
+        '<p class="qz-sub">Текст заявки уже скопирован: вставьте его в\u00a0чат со\u00a0мной и\u00a0нажмите «Отправить».' + (files.length ? ' Фото прикрепите там же скрепкой.' : '') + '</p>' +
+        '<div class="qz-act"><a class="qz-go ym-disable-tracklink" id="qz-again" href="' + VK + '" target="_blank" rel="noopener">Открыть чат ещё раз</a><button type="button" class="qz-alt" id="qz-copy">Скопировать текст</button><button type="button" class="qz-alt" data-close>Готово</button></div>';
       if (s === "done" && files.length){
         var canShare = navigator.canShare && navigator.canShare({ files: files.map(function(f){ return f.file; }) });
         return '<span class="qz-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><h2 id="qz-h">Заявка в\u00a0чате, осталось фото</h2>' +
@@ -1960,7 +1964,7 @@ html.intro:not(.late) .dom{background-image:none}
       bar.style.width = (s === "review" || s === "done" ? 100 : Math.round(i / total * 100 + 100 / total)) + "%";
       back.hidden = !hist.length || s === "done";
       body.innerHTML = '<div class="qz-step' + (dir < 0 ? " back" : "") + '">' + html(s) + "</div>";
-      var t = s === "done" ? TG + "?text=" + encodeURIComponent(text()) : null;
+      var t = s === "done" ? (via === "vk" ? VK : TG + "?text=" + encodeURIComponent(text())) : null;
       if (t) document.getElementById("qz-again").href = t;
       if (s === "review") document.getElementById("qz-send").href = TG + "?text=" + encodeURIComponent(text());
       var first = body.querySelector("textarea, input, .qz-o.on, .qz-o, .qz-go"); if (first && window.matchMedia("(hover: hover)").matches) first.focus({ preventScroll: true });
@@ -1986,7 +1990,13 @@ html.intro:not(.late) .dom{background-image:none}
         }
         next(); return;
       }
+      if (e.target.closest("#qz-vk")){
+        /* у ВКонтакте нет ссылки с готовым текстом — копируем заявку, человек вставляет её в чат */
+        via = "vk"; var tv = text(); if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(tv).catch(function(){});
+        setTimeout(function(){ hist.push("review"); show("done", 1); }, 50); return;
+      }
       if (e.target.closest("#qz-send")){
+        via = "tg";
         /* the chat opens with the request typed in; a copy is kept in case an app ignores the text */
         var txt = text(); if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).catch(function(){});
         setTimeout(function(){ hist.push("review"); show("done", 1); }, 50); return;
@@ -1995,7 +2005,7 @@ html.intro:not(.late) .dom{background-image:none}
       if (rm){ var f = files.splice(+rm.dataset.rm, 1)[0]; if (f) URL.revokeObjectURL(f.url); document.getElementById("qz-thumbs").innerHTML = thumbs(); return; }
       if (e.target.closest("#qz-share")){ navigator.share({ files: files.map(function(f){ return f.file; }) }).catch(function(){}); return; }
       if (e.target.closest("#qz-copy")){ copyText(text(), e.target.closest("#qz-copy"), "Скопировано"); return; }
-      if (e.target.closest("[data-close]")){ ans = {}; hist = []; step = "idea"; files.forEach(function(f){ URL.revokeObjectURL(f.url); }); files = []; save(); close(); }
+      if (e.target.closest("[data-close]")){ via = "tg"; ans = {}; hist = []; step = "idea"; files.forEach(function(f){ URL.revokeObjectURL(f.url); }); files = []; save(); close(); }
     });
     body.addEventListener("change", function(e){
       if (e.target.id !== "qz-files") return;
@@ -2077,7 +2087,7 @@ html.intro:not(.late) .dom{background-image:none}
   if (openQuiz) window.openQuiz = function(){ goal("anketa"); return openQuiz.apply(this, arguments); };
   document.addEventListener("click", function(e){
     var a = e.target.closest && e.target.closest("a[href]"); if (!a) return;
-    if (a.id === "qz-send") return goal("zayavka");
+    if (a.id === "qz-send" || a.id === "qz-vk") return goal("zayavka");
     if (a.closest("#qz")) return;
     if (/t\.me\/vladimirparkoff|vk\.com\/vladimirparkov/.test(a.href)) goal("napisal");
   }, true);
